@@ -51,10 +51,10 @@
         <HistoryChart />
         <HotVisit />
         <div class="row">
-          <div class="col-6">
+          <div class="col-12 col-sm-6">
             <StayTime />
           </div>
-          <div class="col-6">
+          <div class="col-12 col-sm-6">
             <BackVisit />
           </div>
         </div>

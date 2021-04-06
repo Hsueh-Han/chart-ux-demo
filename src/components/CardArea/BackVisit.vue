@@ -16,7 +16,7 @@
           <li v-for="(item, index) in semCircleSpace" :key="index">
             <div class="theme-square"
             :style="{'background-color': semCircleThemeColor[index]}"></div>
-            <span class="ml-4">{{item}}</span>
+            <small class="ml-4">{{item}}</small>
           </li>
         </ul>
       </div>
