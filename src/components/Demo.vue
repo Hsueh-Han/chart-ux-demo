@@ -1,12 +1,23 @@
 <template>
-  <div class="container pt-3">
+  <div class="container-fluid pt-3">
     <div class="row">
+      <div class="col-12 py-3 bg-gray rounded-lg mb-3">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <StatusCard />
+          </div>
+          <div class="col-12 col-lg-6">
+            <ImmediateFlowChart />
+          </div>
+        </div>
+      </div>
       <div class="col-12 py-3 bg-gray rounded-lg mb-3">
         <div class="mb-4">
           <h5 class="font-weight-bold">請選擇場域（可複選，最多6個）</h5>
           <el-select
             :multiple-limit="6"
             :clearable="true"
+            no-match-text="沒有符合的搜尋選項"
             v-model="value"
             multiple
             filterable
@@ -49,13 +60,17 @@
       </div>
       <div class="col-12 py-3 bg-gray rounded-lg" v-if="isRenderChart">
         <HistoryChart />
-        <HotVisit />
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <HotVisit />
+          </div>
+          <div class="col-12 col-lg-6">
+            <BackVisit />
+          </div>
+        </div>
         <div class="row">
           <div class="col-12 col-sm-6">
             <StayTime />
-          </div>
-          <div class="col-12 col-sm-6">
-            <BackVisit />
           </div>
         </div>
       </div>
@@ -64,6 +79,8 @@
 </template>
 
 <script>
+import ImmediateFlowChart from '@/components/CardArea/ImmediateFlow.vue';
+import StatusCard from '@/components/WarningStatus/Status.vue';
 import HistoryChart from '@/components/CardArea/HistoryCard.vue';
 import StayTime from '@/components/CardArea/StayTime.vue';
 import HotVisit from '@/components/CardArea/HotVisit.vue';
@@ -73,6 +90,8 @@ import MonthPicker from '@/components/MonthPicker/monthPicker.vue';
 
 export default {
   components: {
+    ImmediateFlowChart,
+    StatusCard,
     DatePicker,
     MonthPicker,
     HistoryChart,

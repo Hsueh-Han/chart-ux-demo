@@ -3,6 +3,7 @@ export default {
     onClick: (e) => e.stopPropagation(), // 禁用 labels 點擊功能
     labels: { // 只回傳顯示 labels 中帶有文字的項目
       filter: (item) => item.text,
+      boxWidth: 13,
     },
   },
   maintainAspectRatio: false, // 取消維持寬高比（關閉這個設定可以自訂圖表高度）
@@ -59,6 +60,9 @@ export default {
         labelString: '場域',
         fontSize: 12,
       },
+      ticks: {
+        fontSize: 10,
+      },
     }],
   },
   tooltips: {
@@ -69,5 +73,13 @@ export default {
     //     console.log(tooltipItem, data);
     //   },
     // },
+  },
+  layout: {
+    padding: {
+      top: 50,
+      left: 20,
+      right: 20,
+      bottom: 10,
+    },
   },
 };

@@ -16,7 +16,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./assets/all.scss";
 
 #app {
   font-family: PingFangTC-Regular, Avenir, Helvetica, Arial, sans-serif;

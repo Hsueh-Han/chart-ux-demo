@@ -14,4 +14,9 @@ export default {
       label: (tooltipItem, data) => ` ${data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]} %`,
     },
   },
+  layout: {
+    padding: {
+      top: 40,
+    },
+  },
 };

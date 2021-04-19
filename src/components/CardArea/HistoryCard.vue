@@ -1,8 +1,8 @@
 <template>
-  <div class="chart-area mb-3">
+  <div class="chart-area mb-3 shadow">
     <div class="area-header p-3 rounded-top d-flex justify-content-between"
     :class="{'rounded-bottom': isSlide}"
-    style="background-color: #c6c6c6;">
+    style="background-color: #d2e2a1;">
       <h5 class="mb-0 d-inline-block">歷史人流數</h5>
       <span class="slide-btn" @click="isSlide = !isSlide">
           <i class="fas fa-plus-circle" v-if="isSlide"></i>
@@ -41,32 +41,32 @@ export default {
       datasets: [
         {
           label: '倉庫外圍',
-          backgroundColor: '#65942e',
+          backgroundColor: '#f45c75',
           data: [10, 20, 30, 40, 25, 30, 50],
         },
         {
           label: '菸廠區',
-          backgroundColor: '#00b3d6',
+          backgroundColor: '#f18100',
           data: [30, 10, 20, 30, 55, 0, 60],
         },
         {
           label: '松菸小賣所 2號店',
-          backgroundColor: '#e96649',
+          backgroundColor: '#fbc02c',
           data: [20, 50, 10, 10, 5, 15, 30],
         },
         {
           label: '松菸小賣所',
-          backgroundColor: '#f1a11e',
+          backgroundColor: '#2c9671',
           data: [20, 50, 11, 10, 25, 15, 10],
         },
         {
           label: '松菸風格店家',
-          backgroundColor: '#a67a93',
+          backgroundColor: '#4176d1',
           data: [40, 15, 38, 10, 55, 25, 40],
         },
         {
           label: '全家便利商店',
-          backgroundColor: 'rgb(93, 153, 227)',
+          backgroundColor: '#7447b7',
           data: [70, 22, 35, 17, 15, 5, 29],
         },
       ],
@@ -76,6 +76,9 @@ export default {
 </script>
 
 <style lang="scss">
+.shadow{
+  box-shadow: 1px 1px 1px #000;
+}
 .slide-btn{
   cursor: pointer;
 }

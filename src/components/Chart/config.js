@@ -1,6 +1,9 @@
 export default {
   legend: {
     onClick: (e) => e.stopPropagation(), // 禁用 labels 點擊功能
+    labels: {
+      boxWidth: 13,
+    },
   },
   maintainAspectRatio: false, // 取消維持寬高比（關閉這個設定可以自訂圖表高度）
   hover: {
@@ -39,6 +42,10 @@ export default {
         display: true,
         labelString: '日期區間',
         fontSize: 12,
+        padding: {
+          top: 30,
+          bottom: 10,
+        },
       },
       ticks: {
         callback: (value) => value,
@@ -62,6 +69,14 @@ export default {
     callbacks: {
       title: (tooltipItem, data) => `${data.labels[tooltipItem[0].index]} 當日累積人流數`,
       label: (tooltipItem, data) => `${data.datasets[tooltipItem.datasetIndex].label} : ${tooltipItem.value}人次`,
+    },
+  },
+  layout: {
+    padding: {
+      top: 50,
+      bottom: 20,
+      left: 20,
+      right: 20,
     },
   },
 };

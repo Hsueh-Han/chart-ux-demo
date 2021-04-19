@@ -1,8 +1,8 @@
 <template>
-  <div class="chart-area mb-3">
+  <div class="chart-area mb-3 shadow">
     <div class="area-header p-3 rounded-top d-flex justify-content-between"
     :class="{'rounded-bottom': isSlide}"
-    style="background-color: #c6c6c6;">
+    style="background-color: #d2e2a1;">
       <h5 class="mb-0 d-inline-block">熱門造訪時段</h5>
       <span class="slide-btn" @click="isSlide = !isSlide">
           <i class="fas fa-plus-circle" v-if="isSlide"></i>
@@ -41,19 +41,19 @@ export default {
       datasets: [
         {
           label: 'TOP 1',
-          backgroundColor: '#d20023',
+          backgroundColor: '#d74343',
           data: [[10, 12], [16, 18], [10, 12], [16, 18]],
           barPercentage: 0.3,
         },
         {
           label: 'TOP 2',
-          backgroundColor: '#ff4c01',
+          backgroundColor: '#f18100',
           data: [[12, 14], [18, 20], [12, 14], [18, 20]],
           barPercentage: 0.3,
         },
         {
           label: 'TOP 3',
-          backgroundColor: '#fec24b',
+          backgroundColor: '#fbc02c',
           data: [[8, 10], [20, 22], [14, 16], [14, 16]],
           barPercentage: 0.3,
         },
@@ -71,6 +71,6 @@ export default {
 
 <style lang="scss" scoped>
 .show-area{
-  height: 350px;
+  height: 400px;
 }
 </style>

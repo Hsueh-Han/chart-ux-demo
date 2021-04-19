@@ -1,8 +1,8 @@
 <template>
-  <div class="chart-area mb-3">
+  <div class="chart-area mb-3 shadow">
     <div class="area-header p-3 rounded-top d-flex justify-content-between"
     :class="{'rounded-bottom': isSlide}"
-    style="background-color: #c6c6c6;">
+    style="background-color: #d2e2a1;">
       <h5 class="mb-0 d-inline-block">平均停留時間</h5>
       <span class="slide-btn" @click="isSlide = !isSlide">
           <i class="fas fa-plus-circle" v-if="isSlide"></i>
