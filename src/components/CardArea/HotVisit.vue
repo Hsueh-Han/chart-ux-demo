@@ -1,5 +1,5 @@
 <template>
-  <div class="chart-area mb-3 shadow">
+  <div class="chart-area shadow">
     <div class="area-header p-3 rounded-top d-flex justify-content-between"
     :class="{'rounded-bottom': isSlide}"
     style="background-color: #d2e2a1;">
@@ -70,6 +70,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.area-body{
+  height: 0;
+  transition: 0.3s ease;
+}
 .show-area{
   height: 400px;
 }

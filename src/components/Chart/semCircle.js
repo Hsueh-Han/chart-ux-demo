@@ -16,7 +16,7 @@ export default {
   },
   layout: {
     padding: {
-      top: 40,
+      top: 20,
     },
   },
 };

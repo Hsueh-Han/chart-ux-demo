@@ -1,5 +1,5 @@
 <template>
-  <div class="chart-area mb-3 shadow">
+  <div class="chart-area mb-3 shadow rounded">
     <div class="area-header p-3 rounded-top d-flex justify-content-between"
     :class="{'rounded-bottom': isSlide}"
     style="background-color: #d2e2a1;">
@@ -9,10 +9,12 @@
           <i class="fas fa-minus-circle" v-if="!isSlide"></i>
       </span>
     </div>
-    <div class="area-body bg-white rounded-bottom" :class="{'show-area': !isSlide}">
-      <div class="p-3" v-show="!isSlide">
-        <StayChart :chart-data="stayChartData" :options="stayOptions" :height="400" />
-      </div>
+    <div class="area-body bg-white rounded-bottom">
+      <el-collapse-transition>
+        <div class="p-3" v-show="!isSlide">
+          <StayChart :chart-data="stayChartData" :options="stayOptions" :height="400" />
+        </div>
+      </el-collapse-transition>
     </div>
   </div>
 </template>
@@ -70,7 +72,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.show-area{
-  height: 450px;
-}
 </style>

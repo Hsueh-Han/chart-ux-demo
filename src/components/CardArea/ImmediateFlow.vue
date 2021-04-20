@@ -1,5 +1,5 @@
 <template>
-  <div class="chart-area h-100 mb-3 mb-lg-0 shadow">
+  <div class="chart-area h-100 shadow">
     <div class="area-header p-3 rounded-top"
     style="background-color: #d2e2a1;">
       <h6 class="mb-0 d-inline-block">每小時即時人流</h6>
@@ -15,7 +15,7 @@
           </div>
         </div>
       </div>
-      <PolarArea :chart-data="polarChartData" :options="polarAreaOptions" :height="270"/>
+      <PolarArea :chart-data="polarChartData" :options="polarAreaOptions" :height="320"/>
     </div>
   </div>
 </template>
@@ -47,7 +47,7 @@ export default {
         '#d74343',
         '#8bc34a',
       ],
-      placeList: ['全家便利商店最多支援十四個字', '倉庫外圍', '菸廠區', '松菸小賣所 2號店', '松菸小賣所', '松菸風格店家'],
+      placeList: ['區域命名長度最多支援十五個字元', '倉庫外圍', '菸廠區', '松菸小賣所 2號店', '松菸小賣所', '松菸風格店家'],
       placeValue: [82, 44, 55, 63, 99, 74],
     };
   },

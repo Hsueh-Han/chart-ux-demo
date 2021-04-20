@@ -9,10 +9,12 @@
           <i class="fas fa-minus-circle" v-if="!isSlide"></i>
       </span>
     </div>
-    <div class="area-body bg-white rounded-bottom" :class="{'show-area': !isSlide}">
-      <div v-show="!isSlide">
-        <BarChart :chart-data="chartData" :options="chartOptions" :height="500" />
-      </div>
+    <div class="area-body bg-white rounded-bottom">
+      <el-collapse-transition>
+        <div v-show="!isSlide">
+          <BarChart :chart-data="chartData" :options="chartOptions" :height="500" />
+        </div>
+      </el-collapse-transition>
     </div>
   </div>
 </template>
@@ -81,12 +83,5 @@ export default {
 }
 .slide-btn{
   cursor: pointer;
-}
-.area-body{
-  transition: 0.2s ease;
-  height: 0;
-}
-.show-area{
-  height: 500px;
 }
 </style>

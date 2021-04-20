@@ -1,6 +1,7 @@
 export default {
   legend: {
     labels: {
+      boxWidth: 12,
     },
   },
   maintainAspectRatio: false, // 取消維持寬高比（關閉這個設定可以自訂圖表高度）

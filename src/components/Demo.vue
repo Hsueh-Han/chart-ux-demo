@@ -3,11 +3,14 @@
     <div class="row">
       <div class="col-12 py-3 bg-gray rounded-lg mb-3">
         <div class="row">
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-6 mb-3">
             <StatusCard />
           </div>
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-6 mb-3">
             <ImmediateFlowChart />
+          </div>
+          <div class="col-12">
+            <FlowChart />
           </div>
         </div>
       </div>
@@ -61,10 +64,10 @@
       <div class="col-12 py-3 bg-gray rounded-lg" v-if="isRenderChart">
         <HistoryChart />
         <div class="row">
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-6 mb-3">
             <HotVisit />
           </div>
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-6 mb-3">
             <BackVisit />
           </div>
         </div>
@@ -79,6 +82,7 @@
 </template>
 
 <script>
+import FlowChart from '@/components/CardArea/Flow.vue';
 import ImmediateFlowChart from '@/components/CardArea/ImmediateFlow.vue';
 import StatusCard from '@/components/WarningStatus/Status.vue';
 import HistoryChart from '@/components/CardArea/HistoryCard.vue';
@@ -90,6 +94,7 @@ import MonthPicker from '@/components/MonthPicker/monthPicker.vue';
 
 export default {
   components: {
+    FlowChart,
     ImmediateFlowChart,
     StatusCard,
     DatePicker,
@@ -148,25 +153,6 @@ export default {
 </script>
 
 <style lang="scss">
-.space-list{
-  list-style: none;
-  padding: 0;
-}
-.space-list li {
-  position: relative;
-  width: 50%;
-  display: inline-block;
-}
-.theme-square{
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: #000;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
 .el-select{
   width: 100%;
 }
