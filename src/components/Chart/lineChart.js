@@ -37,7 +37,7 @@ export default {
   },
   tooltips: {
     mode: 'index',
-    intersect: false,
+    // intersect: false,
     callbacks: {
       title: (tooltipItem, data) => `今日 ${data.labels[tooltipItem[0].index]}：00`,
       label: (tooltipItem, data) => {

@@ -16,7 +16,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 #app {
   font-family: PingFangTC-Regular, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -145,6 +145,7 @@ export default {
   border-radius: 5px;
   background: #ffffff;
   font-size: 12px;
+  overflow: hidden;
 }
 .mx-h-100{
   max-height: 100%;
@@ -156,15 +157,13 @@ export default {
   height: 67px;
   transition: 0.5s ease;
 }
-.tag-hover{
-  .status-text-box{
-    overflow: hidden;
-  }
+.tag-hover .status-text-box{
+  height: 61px;
 }
 .tag-hover:hover{
   .status-text-box{
-    overflow: initial;
-    overflow-x: auto;
+    overflow: auto;
+    height: 114px;
   }
   z-index: 100;
   height: 120px;
