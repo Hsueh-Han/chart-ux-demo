@@ -155,7 +155,7 @@ export default {
 }
 .status-tag{
   height: 67px;
-  transition: 0.5s ease;
+  transition: 0.15s ease;
 }
 .tag-hover .status-text-box{
   height: 61px;

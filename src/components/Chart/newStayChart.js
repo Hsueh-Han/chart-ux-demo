@@ -8,11 +8,11 @@ export default {
   scales: {
     xAxes: [{
       gridLines: {
-        display: false,
+        display: true,
       },
       scaleLabel: {
         display: true,
-        labelString: '時間 ( 24 時制 )',
+        labelString: '停留時間',
         fontSize: 12,
       },
       ticks: {
@@ -22,11 +22,11 @@ export default {
     }],
     yAxes: [{
       gridLines: {
-        display: true,
+        display: false,
       },
       scaleLabel: {
         display: true,
-        labelString: '場域即時人流',
+        labelString: '場域人流',
         fontSize: 12,
       },
       ticks: {
@@ -39,7 +39,7 @@ export default {
     mode: 'index',
     // intersect: false,
     callbacks: {
-      title: (tooltipItem, data) => `今日 ${data.labels[tooltipItem[0].index]}：00`,
+      title: (tooltipItem, data) => `停留時間：${data.labels[tooltipItem[0].index]}`,
       label: (tooltipItem, data) => {
         if (Number(tooltipItem.value)) {
           return `${data.datasets[tooltipItem.datasetIndex].label} 人流數: ${tooltipItem.value} 人`;
@@ -50,7 +50,10 @@ export default {
   },
   layout: {
     padding: {
-      right: 30,
+      top: 50,
+      bottom: 20,
+      left: 20,
+      right: 20,
     },
   },
 };

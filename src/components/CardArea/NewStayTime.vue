@@ -1,20 +1,29 @@
 <template>
-  <div class="chart-area h-100 shadow">
-    <div class="area-header p-3 rounded-top"
+  <div class="chart-area mb-3 shadow rounded">
+    <div class="area-header p-3 rounded-top d-flex justify-content-between"
+    :class="{'rounded-bottom': isSlide}"
     style="background-color: #d2e2a1;">
-      <h6 class="mb-0 d-inline-block">當日人流趨勢狀況</h6>
+      <h5 class="mb-0 d-inline-block">平均停留時間</h5>
+      <span class="slide-btn" @click="isSlide = !isSlide">
+          <i class="fas fa-plus-circle" v-if="isSlide"></i>
+          <i class="fas fa-minus-circle" v-if="!isSlide"></i>
+      </span>
     </div>
-    <div class="bg-white rounded-bottom show-area p-5 overflow-x-sm">
-      <div class=" xflow-width-sm">
-        <LineChart :chart-data="lineChartData" :options="lineChartOptions" :height="400"/>
-      </div>
+    <div class="area-body bg-white rounded-bottom">
+      <el-collapse-transition>
+        <div class="p-3 overflow-x-sm" v-show="!isSlide">
+          <div class="xflow-width-sm">
+            <LineChart :chart-data="lineChartData" :options="lineChartOptions" :height="450"/>
+          </div>
+        </div>
+      </el-collapse-transition>
     </div>
   </div>
 </template>
 
 <script>
 import LineChart from '@/components/Chart/lineChart.vue';
-import lineChartOptions from '@/components/Chart/lineChart';
+import lineChartOptions from '@/components/Chart/newStayChart';
 
 export default {
   components: {
@@ -22,6 +31,7 @@ export default {
   },
   data() {
     return {
+      isSlide: false,
       lineChartOptions,
       lineChartData: {
         labels: [],
@@ -31,8 +41,8 @@ export default {
   },
   mounted() {
     this.lineChartData = {
-      labels: ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13',
-        '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'],
+      labels: ['0', '0-3 mins', '3-5 mins', '5-10 mins', '10-30 mins', '30-60 mins', '1-3 hrs', '3-6 hrs',
+        '6-9 hrs', '9 hrs 以上'],
       datasets: [
         {
           label: '倉庫外圍',
@@ -40,8 +50,8 @@ export default {
           backgroundColor: '#f45c75',
           fill: false,
           pointBackgroundColor: '#f45c75',
-          pointRadius: 2,
-          data: [0, 0, 0, 0, 0, 0, 10, 20, 30, 44, 53, 62, 70, 85, 98, 102],
+          pointRadius: 3,
+          data: [0, 40, 70, 80, 40, 20, 10, 10, 15, 10],
         },
         {
           label: '菸廠區',
@@ -49,8 +59,8 @@ export default {
           backgroundColor: '#f18100',
           fill: false,
           pointBackgroundColor: '#f18100',
-          pointRadius: 2,
-          data: [0, 0, 0, 0, 0, 0, 0, 5, 10, 14, 20, 22, 40, 45, 48, 52],
+          pointRadius: 3,
+          data: [0, 30, 20, 50, 40, 30, 20, 30, 20, 15],
         },
         {
           label: '松菸小賣所 2號店',
@@ -59,7 +69,7 @@ export default {
           fill: false,
           pointBackgroundColor: '#fbc02c',
           pointRadius: 2,
-          data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 7, 10, 15, 18, 22],
+          data: [0, 30, 20, 40, 80, 50, 30, 20, 10, 5],
         },
         {
           label: '松菸小賣所',
@@ -67,8 +77,8 @@ export default {
           backgroundColor: '#2c9671',
           fill: false,
           pointBackgroundColor: '#2c9671',
-          pointRadius: 2,
-          data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 12, 20, 25, 18, 19],
+          pointRadius: 3,
+          data: [0, 20, 30, 40, 20, 25, 10, 5, 3, 3],
         },
         {
           label: '松菸風格店家',
@@ -76,8 +86,8 @@ export default {
           backgroundColor: '#4176d1',
           fill: false,
           pointBackgroundColor: '#4176d1',
-          pointRadius: 2,
-          data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 23, 22, 21, 25, 28, 39],
+          pointRadius: 3,
+          data: [0, 10, 30, 50, 60, 30, 10, 20, 30, 5],
         },
         {
           label: '全家便利商店',
@@ -85,8 +95,8 @@ export default {
           backgroundColor: '#7447b7',
           fill: false,
           pointBackgroundColor: '#7447b7',
-          pointRadius: 2,
-          data: [2, 2, 3, 4, 2, 2, 6, 10, 8, 15, 20, 22, 30, 35, 28, 29],
+          pointRadius: 3,
+          data: [0, 90, 110, 70, 20, 10, 5, 2, 3, 3],
         },
       ],
     };

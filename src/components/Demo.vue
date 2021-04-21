@@ -72,8 +72,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 col-sm-6">
-            <StayTime />
+          <div class="col-12">
+            <NewStayTime />
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@ import FlowChart from '@/components/CardArea/Flow.vue';
 import ImmediateFlowChart from '@/components/CardArea/ImmediateFlow.vue';
 import StatusCard from '@/components/WarningStatus/Status.vue';
 import HistoryChart from '@/components/CardArea/HistoryCard.vue';
-import StayTime from '@/components/CardArea/StayTime.vue';
+import NewStayTime from '@/components/CardArea/NewStayTime.vue';
 import HotVisit from '@/components/CardArea/HotVisit.vue';
 import BackVisit from '@/components/CardArea/BackVisit.vue';
 import DatePicker from '@/components/DatePicker/datePicker.vue';
@@ -101,7 +101,7 @@ export default {
     MonthPicker,
     HistoryChart,
     HotVisit,
-    StayTime,
+    NewStayTime,
     BackVisit,
   },
   data() {
